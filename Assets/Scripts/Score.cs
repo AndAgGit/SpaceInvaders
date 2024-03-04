@@ -8,6 +8,13 @@ public class Score : MonoBehaviour
 
     void Start()
     {
+        AlienStats.onBulletImpact += addScore;
         score = 0;
+    }
+
+    public void addScore(int value)
+    {
+        score += value;
+        Debug.Log(score);
     }
 }
