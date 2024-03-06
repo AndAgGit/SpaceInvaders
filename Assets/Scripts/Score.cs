@@ -8,7 +8,7 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        AlienStats.onBulletImpact += addScore;
+        AlienStats.onAlienDeath += addScore;
         score = 0;
     }
 

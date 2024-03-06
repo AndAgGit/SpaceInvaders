@@ -227,10 +227,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e89913eb08a8974b941f275f3e3ff52, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interval: 1
+  maxInterval: 1
   intervalDecrease: 0.9
+  levelDeltaInterval: 0.95
+  speedUpDelta: 0.8
   verticalStep: 0.5
-  stepSize: 0.5
+  stepSize: 0.25
   alienContainer: {fileID: 1390516324}
 --- !u!1 &705507993
 GameObject:

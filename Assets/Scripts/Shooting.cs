@@ -11,7 +11,7 @@ public class Shooting : MonoBehaviour
 
     private void Start()
     {
-        BulletMovement.onBulletImpact += enableShooting;
+        BulletMovement.onBulletImpact += EnableShooting;
         canShoot = true;
     }
     void Update()
@@ -23,7 +23,7 @@ public class Shooting : MonoBehaviour
         }
     }
 
-    public void enableShooting()
+    public void EnableShooting()
     {
         canShoot = true;
     }

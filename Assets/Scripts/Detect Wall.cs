@@ -9,7 +9,7 @@ public class DetectWall : MonoBehaviour
 
     void Update()
     {
-        if (AlienMove.getDirection() > 0 && transform.position.x >= 8.25f || AlienMove.getDirection() < 0 && transform.position.x <= -8.25f)
+        if (AlienMove.GetDirection() > 0 && transform.position.x >= 8.25f || AlienMove.GetDirection() < 0 && transform.position.x <= -8.25f)
         {
             OnWallHit();
         }

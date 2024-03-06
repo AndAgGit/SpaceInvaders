@@ -13,11 +13,14 @@ public class AlienSpawn : MonoBehaviour
 
     private void Start()
     {
-        spawn();
+        Spawn();
+        GameLogic.OnNewRound += Spawn;
     }
 
-    public void spawn()
+    public void Spawn()
     {
+        alienContainer.position = new Vector3(0f, 0.5f - (0.5f * AlienMove.GetLevel()), 0f);
+
         for(float i = 0; i < cols; i++)
         {
             for(float n = 1; n < 6; n++)
@@ -27,5 +30,6 @@ public class AlienSpawn : MonoBehaviour
                 newGuy.GetComponent<AlienStats>().setType((int)Mathf.Ceil(n / 2f));
             }
         }
+        GameLogic.SetNumAliens(5 * cols);
     }
 }

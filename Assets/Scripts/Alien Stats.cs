@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class AlienStats : MonoBehaviour
 {
-    public delegate void bulletImpactAction(int value);
-    public static event bulletImpactAction onBulletImpact;
+    public delegate void alienDeathAction(int value);
+    public static event alienDeathAction onAlienDeath;
 
     private int value;
     private bool canShoot;
@@ -36,8 +36,11 @@ public class AlienStats : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        onBulletImpact(value);
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag.Equals("Bullet"))
+        {
+            onAlienDeath(value);
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
     }
 }
