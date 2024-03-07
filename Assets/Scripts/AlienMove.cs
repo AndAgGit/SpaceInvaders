@@ -4,15 +4,20 @@ using UnityEngine;
 
 public class AlienMove : MonoBehaviour
 {
+    public delegate void alienWaitAction();
+    public static alienWaitAction OnEndWait;
+
     public float maxInterval, intervalDecrease, levelDeltaInterval, speedUpDelta, verticalStep, stepSize;
     public Transform alienContainer;
 
     private static float interval, timer, direction;
-    private static bool moveDown;
+    private static bool moveDown, canMove;
     private static float level;
 
-    void Start()
+
+    void Awake()
     {
+        canMove = true;
         level = 1;
         interval = maxInterval;
         moveDown = false;
@@ -21,9 +26,16 @@ public class AlienMove : MonoBehaviour
         DetectWall.OnWallHit += WallBounce;
         GameLogic.OnNewRound += NewRoundStats;
         GameLogic.OnHalfDead += SpeedUp;
+        PlayerMove.OnPlayerDeath += PlayerDeath;
     }
     void Update()
     {
+        if (!canMove)
+        {
+            timer = maxInterval;
+            return;
+        }
+
         timer -= Time.deltaTime;
 
         if (timer > 0f)
@@ -35,6 +47,7 @@ public class AlienMove : MonoBehaviour
         {
             alienContainer.position += Vector3.down * verticalStep;
             moveDown = false;
+            direction *= -1f;
             interval *= intervalDecrease;
             level++;
         }
@@ -56,9 +69,13 @@ public class AlienMove : MonoBehaviour
         return level;
     }
 
+    public static bool GetMoveDown()
+    {
+        return moveDown;
+    }
+
     public static void WallBounce()
     {
-        direction *= -1f;
         moveDown = true;
     }
 
@@ -73,5 +90,24 @@ public class AlienMove : MonoBehaviour
     {
         Debug.Log("Speeding up");
         interval *= speedUpDelta;
+    }
+
+    public void PlayerDeath()
+    {
+        canMove = false;
+        StartCoroutine("BulletDecay");
+    }
+
+    IEnumerator BulletDecay()
+    {
+        float timer = 4f;
+        while(timer > 0f)
+        {
+            timer -= Time.deltaTime;
+            yield return null;
+        }
+        canMove = true;
+        OnEndWait();
+        yield break;
     }
 }

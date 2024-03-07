@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 766407855776740388}
   - component: {fileID: 5859559898042924319}
   - component: {fileID: 4528062714960421173}
+  - component: {fileID: 8454606825888466180}
   m_Layer: 0
   m_Name: Alien
   m_TagString: Untagged
@@ -131,3 +132,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98e2c10303457db4b892ecf2598df144, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &8454606825888466180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6738908678860738336}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c7c87df8c2afbcc4180092018aa2e4a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alienBullet: {fileID: 246906174186708211, guid: 25700e4ea189876429507b43590c1ded, type: 3}
+  chance: 15
+  minInterval: 3
+  maxInterval: 7

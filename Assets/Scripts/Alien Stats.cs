@@ -43,4 +43,9 @@ public class AlienStats : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public bool getCanShoot()
+    {
+        return canShoot;
+    }
 }

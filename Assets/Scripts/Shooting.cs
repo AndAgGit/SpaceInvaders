@@ -5,7 +5,6 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     public GameObject bullet;
-    public Transform bulletSpawn;
 
     private bool canShoot;
 
@@ -19,7 +18,7 @@ public class Shooting : MonoBehaviour
         if(canShoot && Input.GetKey(KeyCode.Space))
         {
             canShoot = false;
-            Instantiate(bullet, bulletSpawn.position, Quaternion.identity);
+            Instantiate(bullet, transform.position, Quaternion.identity);
         }
     }
 

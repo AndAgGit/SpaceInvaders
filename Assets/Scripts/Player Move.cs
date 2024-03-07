@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
+    public delegate void PlayerDeathEvent();
+    public static PlayerDeathEvent OnPlayerDeath;
+
     public float speed;
     public float xMax;
     public float xMin;
@@ -23,5 +26,19 @@ public class PlayerMove : MonoBehaviour
         {
             transform.position += Vector3.right * moveX * speed * Time.deltaTime;
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!other.gameObject.CompareTag("Bullet"))
+        {
+            return;
+        }
+
+        Debug.Log("Ouch");
+        Destroy(other.gameObject);
+        Destroy(this.gameObject);
+
+        OnPlayerDeath();
     }
 }

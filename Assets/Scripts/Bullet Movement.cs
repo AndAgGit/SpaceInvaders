@@ -10,7 +10,7 @@ public class BulletMovement : MonoBehaviour
     public float speed;
     private void Awake()
     {
-        Destroy(gameObject, 1.5f);
+        Destroy(gameObject, 2f);
         GetComponent<Rigidbody>().AddForce(Vector3.up * speed, ForceMode.Impulse);
     }
 

@@ -8,13 +8,18 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        AlienStats.onAlienDeath += addScore;
+        AlienStats.onAlienDeath += AddScore;
         score = 0;
     }
 
-    public void addScore(int value)
+    public void AddScore(int value)
     {
         score += value;
         Debug.Log(score);
+    }
+
+    public static int GetScore()
+    {
+        return score;
     }
 }

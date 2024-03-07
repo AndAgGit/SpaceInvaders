@@ -19,7 +19,13 @@ public class AlienSpawn : MonoBehaviour
 
     public void Spawn()
     {
-        alienContainer.position = new Vector3(0f, 0.5f - (0.5f * AlienMove.GetLevel()), 0f);
+        float level = AlienMove.GetLevel();
+        if (level > 5)
+        {
+            level = 5;
+        }
+
+        alienContainer.position = new Vector3(0f, 0.5f - (0.5f * level), 0f);
 
         for(float i = 0; i < cols; i++)
         {
