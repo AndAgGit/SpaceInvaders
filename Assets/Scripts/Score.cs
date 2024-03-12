@@ -9,6 +9,7 @@ public class Score : MonoBehaviour
     void Start()
     {
         AlienStats.onAlienDeath += AddScore;
+        GameLogic.OnGameOver += SaveScore;
         score = 0;
     }
 
@@ -21,5 +22,16 @@ public class Score : MonoBehaviour
     public static int GetScore()
     {
         return score;
+    }
+
+    public void SaveScore()
+    {
+        if(score <= PlayerPrefs.GetInt("score"))
+        {
+            return;
+        }
+
+        PlayerPrefs.SetInt("score", score);
+        PlayerPrefs.Save();
     }
 }

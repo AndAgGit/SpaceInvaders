@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa1a151e22ad95741bafb4441d74cd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  baby: {fileID: 2100000, guid: 8701fc25cf04e354f8a0370bd28e6107, type: 2}
+  sad: {fileID: 2100000, guid: 548ff162eccbdb64a93bb3d21ce4b4f3, type: 2}
+  mad: {fileID: 2100000, guid: b0c0c44f16a059c41a9618271d7dd6bf, type: 2}
+  rand: {fileID: 2100000, guid: 1e3c8b7a92e5fda4fade9c2fe4e3ff92, type: 2}
 --- !u!65 &5859559898042924319
 BoxCollider:
   m_ObjectHideFlags: 0

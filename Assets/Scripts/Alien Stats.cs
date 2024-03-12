@@ -7,9 +7,11 @@ public class AlienStats : MonoBehaviour
     public delegate void alienDeathAction(int value);
     public static event alienDeathAction onAlienDeath;
 
+    public Material baby, sad, mad, rand;
+
     private int value;
     private bool canShoot;
-    private Color color;
+    private Material mat;
 
     public void setType(int type)
     {
@@ -18,20 +20,20 @@ public class AlienStats : MonoBehaviour
         switch (type)
         {
             case 1:
-                color = Color.green;
+                mat = baby;
                 break;
             case 2:
-                color = Color.yellow;
+                mat = sad;
                 break;
             case 3:
-                color = Color.red;
+                mat = mad;
                 break;
             default:
-                color = Color.cyan;
+                mat = rand;
                 break;
         }
 
-        GetComponent<MeshRenderer>().material.color = color;
+        GetComponent<MeshRenderer>().material = mat;
     }
 
     private void OnCollisionEnter(Collision collision)
