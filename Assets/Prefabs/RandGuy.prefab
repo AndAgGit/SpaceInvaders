@@ -11,12 +11,11 @@ GameObject:
   - component: {fileID: 3974533559485824496}
   - component: {fileID: 1710005481803974324}
   - component: {fileID: 1022432631847944132}
-  - component: {fileID: 766407855776740388}
   - component: {fileID: 5859559898042924319}
-  - component: {fileID: 4528062714960421173}
-  - component: {fileID: 8454606825888466180}
+  - component: {fileID: -6674221980527849322}
+  - component: {fileID: -7319476943234621870}
   m_Layer: 0
-  m_Name: Alien
+  m_Name: RandGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -87,24 +86,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &766407855776740388
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6738908678860738336}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aa1a151e22ad95741bafb4441d74cd73, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  baby: {fileID: 2100000, guid: 8701fc25cf04e354f8a0370bd28e6107, type: 2}
-  sad: {fileID: 2100000, guid: 548ff162eccbdb64a93bb3d21ce4b4f3, type: 2}
-  mad: {fileID: 2100000, guid: b0c0c44f16a059c41a9618271d7dd6bf, type: 2}
-  rand: {fileID: 2100000, guid: 1e3c8b7a92e5fda4fade9c2fe4e3ff92, type: 2}
-  textPrefab: {fileID: 8047124830917605036, guid: 013e40b703914a145b05aa21e4f14afd, type: 3}
-  explosionPrefab: {fileID: 5343147095728819226, guid: 4a5b8616b1829ec42b6142151167e526, type: 3}
 --- !u!65 &5859559898042924319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -126,7 +107,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &4528062714960421173
+--- !u!114 &-6674221980527849322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,10 +116,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 6738908678860738336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98e2c10303457db4b892ecf2598df144, type: 3}
+  m_Script: {fileID: 11500000, guid: aa1a151e22ad95741bafb4441d74cd73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &8454606825888466180
+  baby: {fileID: 2100000, guid: 8701fc25cf04e354f8a0370bd28e6107, type: 2}
+  sad: {fileID: 2100000, guid: 548ff162eccbdb64a93bb3d21ce4b4f3, type: 2}
+  mad: {fileID: 2100000, guid: b0c0c44f16a059c41a9618271d7dd6bf, type: 2}
+  rand: {fileID: 2100000, guid: 1e3c8b7a92e5fda4fade9c2fe4e3ff92, type: 2}
+  textPrefab: {fileID: 0}
+--- !u!114 &-7319476943234621870
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -147,10 +133,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6738908678860738336}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c7c87df8c2afbcc4180092018aa2e4a9, type: 3}
+  m_Script: {fileID: 11500000, guid: ae3cf3a4b365ba345be8602c9475efaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  alienBullet: {fileID: 246906174186708211, guid: 25700e4ea189876429507b43590c1ded, type: 3}
-  chance: 15
-  minInterval: 3
-  maxInterval: 7
+  speed: 2

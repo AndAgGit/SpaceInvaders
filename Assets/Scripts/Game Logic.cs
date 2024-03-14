@@ -34,6 +34,7 @@ public class GameLogic : MonoBehaviour
         {
             Debug.Log("All Dead!");
             OnNewRound();
+            lives++;
             canSpeedUp = true;
             canQuarterSpeedUp = true;
             return;
@@ -74,7 +75,7 @@ public class GameLogic : MonoBehaviour
         return numAliens;
     }
 
-    public static void PlayerDeath()
+    public void PlayerDeath()
     {
         lives--;
         

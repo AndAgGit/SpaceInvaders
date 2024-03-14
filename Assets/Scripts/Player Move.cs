@@ -6,6 +6,7 @@ public class PlayerMove : MonoBehaviour
 {
     public delegate void PlayerDeathEvent();
     public static PlayerDeathEvent OnPlayerDeath;
+    public GameObject deathParticles;
 
     public float speed;
     public float xMax;
@@ -34,6 +35,9 @@ public class PlayerMove : MonoBehaviour
         {
             return;
         }
+
+        GameObject effects = Instantiate(deathParticles, transform.position, Quaternion.identity, null);
+        Destroy(effects, 3f);
 
         Debug.Log("Ouch");
         Destroy(other.gameObject);
